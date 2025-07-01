@@ -4,6 +4,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import nashpy as nash
+from numpy.ma.core import append
+
 
 def custom_sigmoid(x):
     return 0.2 * np.tanh(20 * x)
@@ -57,12 +59,14 @@ def print_nonzero_strategy(strategy, price_range, player_name,cost):
     for price, prob in zip(price_range, strategy):
         if prob > 0:  # 只打印非0概率
             print(f"Price: {price:.3f} | Probability: {prob*100:.1f}%")
+            best_price = price
     print(f"{player_name}'s cost:{cost}")
+    return  best_price
 
 ##----------------------------------------------------------------------------
-def probability(U_0, U_1, demand, P0, P1,budget):
-    p_0 = np.exp(U_0 - demand * P0) if P0<=budget else 0
-    p_1 = np.exp(U_1 - demand * P1) if P0<=budget else 0
+def probability(U_0, U_1, demand, P0, P1,budget, index):
+    p_0 = np.exp(U_0 - index*demand * P0) if P0<=budget else 0
+    p_1 = np.exp(U_1 - index*demand * P1) if P1<=budget else 0
     if p_1+p_0==0:
         pr_0=0
         pr_1=0
@@ -75,9 +79,11 @@ def probability(U_0, U_1, demand, P0, P1,budget):
 
 
 ##-------读取数据---------------------------------------------------------
-filename_c="C:/Users/yuzhe/PycharmProjects/PythonProject/customer.txt"
-filename_p="C:/Users/yuzhe/PycharmProjects/PythonProject/provider.txt"
+filename_c="C:/Users/yuzhe/PycharmProjects/PythonProject/training_data/customer_2.2.txt"
+filename_p="C:/Users/yuzhe/PycharmProjects/PythonProject/training_data/provider_2.2.txt"
 demand,resource,budget, lamda,cost, supply = load_customer(filename_c,filename_p)
+
+sd_index = np.sum(supply)/np.sum(demand)
 
 lamda_0 = lamda[0]
 lamda_1 = lamda[1]
@@ -103,36 +109,36 @@ tolerance = 0.005  # 收敛阈值，防止无限循环
 
 for iteration in range(max_iterations):
 
-    revenue0 = np.zeros((len(P0_range), len(P1_range)))
-    revenue1 = np.zeros((len(P0_range), len(P1_range)))
+    quantity_0 = np.zeros((len(P0_range), len(P1_range)))
+    quantity_1 = np.zeros((len(P0_range), len(P1_range)))
 
     for c in range(customer):
-        revenue_0_matrix = []
-        revenue_1_matrix = []
+
+        choice_c0 = []
+        choice_c1 = []
 
         for P0 in P0_range:
-            money_0 = []
-            money_1 = []
+            choice_p0 = []
+            choice_p1 = []
 
             for P1 in P1_range:
-                choice_0 = probability(Utility_0[c], Utility_1[c], demand[c], P0, P1,budget[c])
-                revenue_0 = round(P0*demand[c]*choice_0[0],4)
-                revenue_1 = round(P1 * demand[c] * choice_0[1],4)
-
-                money_0.append(revenue_0)
-                money_1.append(revenue_1)
+                choice_0 = probability(Utility_0[c], Utility_1[c], demand[c], P0, P1,budget[c],1)
+                choice_p0.append(choice_0[0])
+                choice_p1.append(choice_0[1])
 
 
-            revenue_0_matrix.append(money_0)
-            revenue_1_matrix.append(money_1)
-        a =np.array(revenue_0_matrix)
-        revenue0 = np.round(revenue0 + np.array(revenue_0_matrix),3)
-        revenue1 = np.round(revenue1 + np.array(revenue_1_matrix),3)
+            choice_c0.append(choice_p0)
+            choice_c1.append(choice_p1)
+        quantity_0 =  np.round(quantity_0 + np.array(choice_c0) * demand[c])
+        quantity_1 = np.round(quantity_1 + np.array(choice_c1) * demand[c])
+    quantity_0 = np.minimum(quantity_0, supply[0])
+    quantity_1 = np.minimum(quantity_1, supply[1])
+    revenue0 = quantity_0 * P0_range[:, np.newaxis]
+    revenue1 = quantity_1 * P1_range
+    revenue0_nor = (revenue0 - np.mean(revenue0)) / np.std(revenue0)
+    revenue1_nor = (revenue1 - np.mean(revenue1)) / np.std(revenue1)
 
-    revenue0 = (revenue0 - np.mean(revenue0)) / np.std(revenue0)
-    revenue1 = (revenue1 - np.mean(revenue1)) / np.std(revenue1)
-
-    game = nash.Game(revenue0, revenue1)
+    game = nash.Game(revenue0_nor, revenue1_nor)
     equilibria = list(game.lemke_howson_enumeration())
 
     print(f"Player 1's mixed strategy: {equilibria[1][0]}")
@@ -154,16 +160,19 @@ for iteration in range(max_iterations):
     if len(p0_nonzero_idx) == 0 or len(p1_nonzero_idx) == 0:
         print("Nash equilibrium did not yield valid indexes.")
         break
-
+    #如果有纯策略
+    if len(p0_nonzero_idx) == 1 and len(p1_nonzero_idx) == 1:
+        print("Pure strategy")
+        break
     # 取均衡价格范围
     new_P0_min, new_P0_max = np.min(P0_range[p0_nonzero_idx]), np.max(P0_range[p0_nonzero_idx])
     new_P1_min, new_P1_max = np.min(P1_range[p1_nonzero_idx]), np.max(P1_range[p1_nonzero_idx])
 
     # 生成新的更精细的搜索范围
-    step_size = max((new_P0_max - new_P0_min) / 8, tolerance)  # 防止步长过小
+    step_size = max((new_P0_max - new_P0_min) / 5, tolerance)  # 防止步长过小
     P0_range_new = np.arange(new_P0_min, new_P0_max + step_size, step_size)
 
-    step_size = max((new_P1_max - new_P1_min) / 8, tolerance)  # 防止步长过小
+    step_size = max((new_P1_max - new_P1_min) /3, tolerance)  # 防止步长过小
     P1_range_new = np.arange(new_P1_min, new_P1_max + step_size, step_size)
 
     if np.array_equal(P0_range, P0_range_new) and np.array_equal(P1_range, P1_range_new):
@@ -173,5 +182,41 @@ for iteration in range(max_iterations):
 
 
 
-print_nonzero_strategy(equilibria[1][0],P0_range,"player 1",cost[0])
-print_nonzero_strategy(equilibria[1][1],P1_range,"player 2",cost[1])
+print(f"\nMarket's Supply and Demand distribution:")
+print(f"Seller Supply: {np.sum(supply)}")
+print(f"Buyer Demand: {np.sum(demand)}")
+print(f"Supply-Demand index: {sd_index}")
+
+
+
+price_0 = print_nonzero_strategy(equilibria[1][0],P0_range,"player 1",cost[0])
+
+price_1 = print_nonzero_strategy(equilibria[1][1],P1_range,"player 2",cost[1])
+
+############################testing################################################################
+
+#--------------P1确定，看P0是否是最优价格------------------------------------------
+
+
+def test_best_price(Utility_0,Utility_1,demand, P0_range, P1,budget, index,customer,test_number):
+    quantity=np.zeros(len(P0_range))
+
+    for c in range(customer):
+        choice_p0 = []
+        for P0 in P0_range:
+
+            choice_0 = probability(Utility_0[c], Utility_1[c], demand[c], P0, P1, budget[c], 1)
+            choice_p0.append(choice_0[test_number])
+
+        quantity = np.round(quantity + np.array(choice_p0) * demand[c])
+
+    quantity = np.minimum(quantity, supply[test_number])
+
+    revenue = quantity * P0
+    return revenue
+revenue = test_best_price(Utility_0,Utility_1,demand,P0_range,price_1,budget,1,customer,1)
+print(revenue)
+
+plt.plot(P0_range, revenue, label="Line plot")
+
+plt.show()

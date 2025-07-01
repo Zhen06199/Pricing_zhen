@@ -1,0 +1,18 @@
+############################# K=4, 10 providers, customer change test, threshold=0.05 ##########################
+Customers: 5, Runtime: 41.2773 seconds, threshold_ratio: 0.1
+Customers: 10, Runtime: 55.1978 seconds, threshold_ratio: 0.1
+Customers: 15, Runtime: 60.8723 seconds, threshold_ratio: 0.1
+Customers: 20, Runtime: 66.7272 seconds, threshold_ratio: 0.1
+Customers: 25, Runtime: 67.3216 seconds, threshold_ratio: 0.1
+Customers: 30, Runtime: 76.5726 seconds, threshold_ratio: 0.1
+Customers: 35, Runtime: 79.6883 seconds, threshold_ratio: 0.1
+Customers: 40, Runtime: 86.1149 seconds, threshold_ratio: 0.1
+############################# K=3, 10 providers, customer change test, threshold=0.005 ##########################
+Customers: 40, Runtime: 2.7716 seconds, threshold_ratio: 0.1
+Customers: 35, Runtime: 2.6627 seconds, threshold_ratio: 0.1
+Customers: 30, Runtime: 2.5038 seconds, threshold_ratio: 0.1
+Customers: 25, Runtime: 2.4477 seconds, threshold_ratio: 0.1
+Customers: 20, Runtime: 2.4122 seconds, threshold_ratio: 0.1
+Customers: 15, Runtime: 2.0503 seconds, threshold_ratio: 0.1
+Customers: 10, Runtime: 1.7738 seconds, threshold_ratio: 0.1
+Customers: 5, Runtime: 1.7629 seconds, threshold_ratio: 0.1

@@ -1,0 +1,129 @@
+ID,Price,Profit
+0,2.2684,213.8312
+1,2.3632,388.6105
+2,2.1947,140.0000
+3,2.1895,80.1355
+4,2.0789,340.4211
+# customer number: 100, customer demand: 5878
+# provider number: 5, customer demand: 2988
+# Running time: 179.6163 seconds
+0,2.1947,200.4211
+1,2.3632,348.3568
+2,2.1947,102.1234
+3,2.0947,62.4316
+4,1.9632,272.3368
+# customer number: 90, customer demand: 5230
+# provider number: 5, customer demand: 2988
+# Running time: 113.4807 seconds
+0,2.1947,160.8424
+1,2.3632,331.8328
+2,2.1947,87.6769
+3,2.0947,62.4316
+4,1.9632,272.3368
+# customer number: 85, customer demand: 4900
+# provider number: 5, customer demand: 2988
+# Running time: 126.4779 seconds
+0,2.0842,80.0790
+1,2.1737,277.5789
+2,1.9737,35.0000
+3,2.3789,31.0263
+4,1.8474,204.2526
+# customer number: 70, customer demand: 3974
+# provider number: 5, customer demand: 2988
+# Running time: 113.6083 seconds
+0,2.3789,48.5249
+1,2.0789,217.8690
+2,1.9737,35.0000
+3,2.3789,21.6917
+4,1.8474,204.2526
+# customer number: 60, customer demand: 3482
+# provider number: 5, customer demand: 2988
+# Running time: 105.6210 seconds
+0,1.9737,26.9036
+1,1.9842,166.5474
+2,2.1947,7.4672
+3,2.3789,8.5526
+4,1.8474,204.2526
+# customer number: 55, customer demand: 3217
+# provider number: 5, customer demand: 2988
+# Running time: 90.4231 seconds
+0,2.4895,22.8155
+1,1.9842,166.5474
+2,1.9737,8.8423
+3,2.4737,9.2285
+4,1.8474,204.2526
+# customer number: 50, customer demand: 2962
+# provider number: 5, customer demand: 2988
+# Running time: 121.5598 seconds
+0,2.4895,22.8155
+1,1.9842,166.5474
+2,1.9737,7.6247
+3,2.4737,9.2285
+4,1.8474,190.6583
+# customer number: 45, customer demand: 2672
+# provider number: 5, customer demand: 2988
+# Running time: 114.1747 seconds
+0,2.4895,22.8155
+1,1.9842,153.9589
+2,1.9737,7.4003
+3,2.4737,9.2285
+4,1.8474,173.5705
+# customer number: 40, customer demand: 2433
+# provider number: 5, customer demand: 2988
+# Running time: 88.0803 seconds
+0,2.4895,22.8155
+1,1.9842,153.9589
+2,1.9737,7.4003
+3,2.4737,9.2285
+4,1.8474,173.5705
+# customer number: 35, customer demand: 2168
+# provider number: 5, customer demand: 2988
+# Running time: 84.6950 seconds
+0,2.4895,22.8155
+1,1.9842,135.9256
+2,1.9737,6.3450
+3,2.4737,9.2285
+4,1.8474,144.3125
+# customer number: 30, customer demand: 1832
+# provider number: 5, customer demand: 2988
+# Running time: 86.9591 seconds
+0,2.4895,22.8155
+1,1.9842,135.9256
+2,1.9737,6.3450
+3,2.4737,9.2285
+4,1.8474,135.2809
+# customer number: 25, customer demand: 1521
+# provider number: 5, customer demand: 2988
+# Running time: 79.3454 seconds
+0,2.4895,22.9361
+1,1.9842,136.7780
+2,2.0842,5.3681
+3,2.4737,9.2834
+4,1.8474,135.8541
+# customer number: 20, customer demand: 1320
+# provider number: 5, customer demand: 2988
+# Running time: 86.2309 seconds
+0,2.4895,22.9361
+1,1.9842,128.2942
+2,2.0842,5.3681
+3,2.4737,9.2834
+4,1.8474,94.4653
+# customer number: 15, customer demand: 1040
+# provider number: 5, customer demand: 2988
+# Running time: 79.3217 seconds
+0,2.4895,25.5157
+1,2.1737,94.8903
+2,1.9737,9.3492
+3,2.4737,10.1461
+4,1.8474,64.9891
+# customer number: 10, customer demand: 724
+# provider number: 5, customer demand: 2988
+# Running time: 94.3774 seconds
+0,2.4895,25.6821
+1,2.1737,95.6785
+2,2.0842,9.4623
+3,2.4737,10.2196
+4,2.0789,2.6069
+# customer number: 5, customer demand: 323
+# provider number: 5, customer demand: 2988
+# Running time: 78.3887 seconds

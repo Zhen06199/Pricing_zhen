@@ -1,0 +1,101 @@
+ID,Price,Profit
+# customer number: 5, customer demand: 323
+# provider number: 4, customer demand: 2402
+# Running time: 1.0397 seconds
+0,2.0842,365.5578
+1,1.9000,109.4021
+2,2.0000,165.5132
+3,1.5000,10.9041
+# customer number: 5, customer demand: 323
+# provider number: 4, customer demand: 2402
+# Running time: 1.7395 seconds
+0,1.9000,673.5704
+1,1.9000,249.3608
+2,2.0000,157.6428
+3,1.5579,248.3678
+# customer number: 10, customer demand: 724
+# provider number: 4, customer demand: 2402
+# Running time: 1.5559 seconds
+0,1.9000,985.4111
+1,1.9000,307.7396
+2,2.0000,221.3256
+3,1.5579,387.4976
+# customer number: 15, customer demand: 1040
+# provider number: 4, customer demand: 2402
+# Running time: 1.4839 seconds
+0,1.9000,1216.5213
+1,1.9000,336.4739
+2,2.0000,238.3696
+3,1.5579,597.3736
+# customer number: 20, customer demand: 1320
+# provider number: 4, customer demand: 2402
+# Running time: 1.5850 seconds
+0,1.9000,1283.2721
+1,1.9000,351.0209
+2,2.0000,252.4434
+3,1.5000,801.9361
+# customer number: 25, customer demand: 1521
+# provider number: 4, customer demand: 2402
+# Running time: 1.7596 seconds
+0,1.9000,1292.0000
+1,1.9000,469.5317
+2,2.0000,261.7064
+3,1.5579,916.0421
+# customer number: 35, customer demand: 2168
+# provider number: 4, customer demand: 2402
+# Running time: 1.7727 seconds
+0,1.9000,1292.0000
+1,1.9000,570.4678
+2,2.0000,273.0324
+3,1.6737,984.1263
+# customer number: 45, customer demand: 2672
+# provider number: 4, customer demand: 2402
+# Running time: 1.9323 seconds
+0,1.9000,1292.0000
+1,1.9000,757.4166
+2,2.0000,381.3801
+3,1.6737,984.1263
+# customer number: 55, customer demand: 3217
+# provider number: 4, customer demand: 2402
+# Running time: 2.4060 seconds
+0,1.9737,1342.1053
+1,1.9000,902.5000
+2,2.0000,621.5063
+3,1.6737,984.1263
+# customer number: 65, customer demand: 3744
+# provider number: 4, customer demand: 2402
+# Running time: 2.7003 seconds
+0,2.0842,1417.2632
+1,1.9737,937.5000
+2,2.0000,1193.4261
+3,1.8474,1086.2526
+# customer number: 75, customer demand: 4318
+# provider number: 4, customer demand: 2402
+# Running time: 2.8172 seconds
+0,2.1947,1492.4211
+1,2.0842,990.0000
+2,2.0000,1318.0000
+3,1.8474,1086.2526
+# customer number: 85, customer demand: 4900
+# provider number: 4, customer demand: 2402
+# Running time: 2.9953 seconds
+0,2.2684,1542.5263
+1,2.1947,1042.5000
+2,2.0947,1380.4316
+3,1.9632,1154.3368
+# customer number: 95, customer demand: 5512
+# provider number: 4, customer demand: 2402
+# Running time: 3.2605 seconds
+0,2.3789,1617.6842
+1,2.2684,1077.5000
+2,2.1895,1442.8632
+3,2.0789,1222.4211
+# customer number: 100, customer demand: 5878
+# provider number: 4, customer demand: 2402
+# Running time: 3.4313 seconds
+#####################################################
+#ID, supply/unit, latency, CO2, cost
+0,    680,    1.80,    0.14,    1.9
+2,    475,    1.12,    0.28,    1.9
+3,    659,    1.92,    0.22,    2.0
+4,    588,    2.98,    0.28,    1.5

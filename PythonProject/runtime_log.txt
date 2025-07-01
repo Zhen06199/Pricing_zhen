@@ -1,0 +1,24 @@
+############################# K=3, 20 customers, provider change test, threshold=0.05 ##########################
+TOTAL_NUM_PROVIDER: 19, Runtime: 2.0478 seconds, threshold_ratio: 0.1
+TOTAL_NUM_PROVIDER: 17, Runtime: 1.8578 seconds, threshold_ratio: 0.1
+TOTAL_NUM_PROVIDER: 15, Runtime: 1.7935 seconds, threshold_ratio: 0.1
+TOTAL_NUM_PROVIDER: 12, Runtime: 1.7138 seconds, threshold_ratio: 0.1
+TOTAL_NUM_PROVIDER: 10, Runtime: 1.6779 seconds, threshold_ratio: 0.1
+TOTAL_NUM_PROVIDER: 8, Runtime: 1.3708 seconds, threshold_ratio: 0.1
+TOTAL_NUM_PROVIDER: 6, Runtime: 1.5185 seconds, threshold_ratio: 0.1
+TOTAL_NUM_PROVIDER: 5, Runtime: 1.0513 seconds, threshold_ratio: 0.1
+TOTAL_NUM_PROVIDER: 4, Runtime: 1.0409 seconds, threshold_ratio: 0.1
+TOTAL_NUM_PROVIDER: 3, Runtime: 0.0795 seconds, threshold_ratio: 0.1
+TOTAL_NUM_PROVIDER: 2, Runtime: 0.0176 seconds, threshold_ratio: 0.1
+############################# K=4, 20 customers, provider change test, threshold=0.05 ##########################
+TOTAL_NUM_PROVIDER: 19, Runtime: 71.4672 seconds, threshold_ratio: 0.01
+TOTAL_NUM_PROVIDER: 17, Runtime: 72.1456 seconds, threshold_ratio: 0.01
+TOTAL_NUM_PROVIDER: 15, Runtime: 70.0974 seconds, threshold_ratio: 0.01
+TOTAL_NUM_PROVIDER: 12, Runtime: 69.9507 seconds, threshold_ratio: 0.01
+TOTAL_NUM_PROVIDER: 10, Runtime: 64.6135 seconds, threshold_ratio: 0.01
+TOTAL_NUM_PROVIDER: 8, Runtime: 68.6200 seconds, threshold_ratio: 0.01
+TOTAL_NUM_PROVIDER: 6, Runtime: 65.4332 seconds, threshold_ratio: 0.01
+TOTAL_NUM_PROVIDER: 5, Runtime: 47.6378 seconds, threshold_ratio: 0.01
+TOTAL_NUM_PROVIDER: 4, Runtime: 2.1999 seconds, threshold_ratio: 0.01
+TOTAL_NUM_PROVIDER: 3, Runtime: 0.0875 seconds, threshold_ratio: 0.01
+TOTAL_NUM_PROVIDER: 2, Runtime: 0.0068 seconds, threshold_ratio: 0.01

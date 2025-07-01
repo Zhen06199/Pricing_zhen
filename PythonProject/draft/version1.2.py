@@ -50,8 +50,8 @@ def probability(U_0, U_1, demand, P0, P1, budget):
         return [0, 0]
     return [round(p_0 / (p_0 + p_1), 3), round(p_1 / (p_0 + p_1), 3)]
 # 读取数据
-filename_c = "C:/Users/yuzhe/PycharmProjects/PythonProject/customer.txt"
-filename_p = "C:/Users/yuzhe/PycharmProjects/PythonProject/provider.txt"
+filename_c = "/customer_comparision.txt"
+filename_p = "/provider_comparison.txt"
 demand, resource, budget, lamda, cost, supply = load_customer(filename_c, filename_p)
 
 lamda_0, lamda_1 = lamda[0], lamda[1]

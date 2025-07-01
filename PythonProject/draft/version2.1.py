@@ -10,7 +10,6 @@ from numpy.ma.core import append
 def custom_sigmoid(x):
     return 0.2 * np.tanh(20 * x)
 
-
 def load_customer(filename_c, filename_p):
     demand = []
     resource = []
@@ -53,7 +52,8 @@ def load_customer(filename_c, filename_p):
             cost.append(cost0)
 
     return np.array(demand), np.array(resource), np.array(budget), np.array(lamda), np.array(cost), np.array(supply)
-
+#demand--buyer的需求，resource--buyer的每个quality的需求， budget--buyer对于1个单位的预算，lamda--除了price的utility且参数都是1.
+#cost--seller1个单位的成本， supplu--seller的supply
 def print_nonzero_strategy(strategy, price_range, player_name,cost):
     print(f"\n{player_name}'s strategy distribution:")
     for price, prob in zip(price_range, strategy):
@@ -108,7 +108,7 @@ def calculate_expected_revenue(revenue_matrix, prob_player0, prob_player1):
 
     return expected_revenue
 ##----------------------------------------------------------------------------
-def probability(U_0, U_1, demand, P0, P1,budget, index):
+def probability(U_0, U_1, demand, P0, P1,budget, index):  #index就是价格前面的系数
     p_0 = np.exp(U_0 - index*demand * P0) if P0<=budget else 0
     p_1 = np.exp(U_1 - index*demand * P1) if P1<=budget else 0
     if p_1+p_0==0:
@@ -123,8 +123,8 @@ def probability(U_0, U_1, demand, P0, P1,budget, index):
 
 
 ##-------读取数据---------------------------------------------------------
-filename_c="C:/Users/yuzhe/PycharmProjects/PythonProject/customer.txt"
-filename_p="C:/Users/yuzhe/PycharmProjects/PythonProject/provider.txt"
+filename_c= "/customer_comparision.txt"
+filename_p= "/provider_comparison.txt"
 demand,resource,budget, lamda,cost, supply = load_customer(filename_c,filename_p)
 
 sd_index = np.sum(supply)/np.sum(demand)

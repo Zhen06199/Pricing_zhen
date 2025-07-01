@@ -1,0 +1,2 @@
+1.训练，   用multi_player_pruning.py 进行训练         input：customer_comparision,  provider_comparison. output：Pricing-strategy-pruning
+2.展示      用comparision_based_on_pricing_pruning.py   input： Pricing-strategy-pruning

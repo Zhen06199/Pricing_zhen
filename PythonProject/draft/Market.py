@@ -13,8 +13,8 @@ class Market:
         self.state_space = None
         self.transit_pro = None
 
-        self.filename_c = "C:/Users/yuzhe/PycharmProjects/PythonProject/customer.txt"
-        self.filename_p = "C:/Users/yuzhe/PycharmProjects/PythonProject/provider.txt"
+        self.filename_c = "/customer_comparision.txt"
+        self.filename_p = "/provider_comparison.txt"
         self.provide_state = None
         self.customer_state = None
         self.state_value = None
